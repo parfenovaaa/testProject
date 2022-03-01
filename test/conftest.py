@@ -16,7 +16,6 @@ def db():
 
 @pytest.fixture()
 def db_fixture():
-
     db_path = 'todo.db'
     db_conn = sqlite3.connect(db_path)
 
@@ -28,3 +27,9 @@ def db_fixture():
     db_conn.close()
     if os.path.exists(db_path):
         os.remove(db_path)
+
+
+def pytest_configure(config):
+    config.addinivalue_line("markers", "slow")
+    config.addinivalue_line("markers", "fast")
+    config.addinivalue_line("markers", "end_to_end")
