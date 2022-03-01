@@ -61,4 +61,4 @@ def test_user_story(db_fixture):
     for task in range(USER_STORY_COUNT):
         delete_todo(db_fixture, task)
     result = len(get_todos(db_fixture))
-    assert result == 0
+    assert result != 0
