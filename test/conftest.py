@@ -32,3 +32,4 @@ def db_fixture():
 def pytest_configure(config):
     config.addinivalue_line("markers", "slow")
     config.addinivalue_line("markers", "fast")
+    config.addinivalue_line("markers", "end_to_end")
